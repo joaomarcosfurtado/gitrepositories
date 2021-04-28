@@ -23,7 +23,7 @@ interface UserInfoContextData {
   userList: UserListProps[];
   isRepositoriesListActive : boolean;
   username: string;
-  wichWasLastApi: string;
+  whichWasLastApiResult: string;
 }
 
 interface UserInfoProviderProps {
@@ -43,7 +43,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
   const [ oldUsername, setOldUsername] = useState('')
   
   // Essa variável armazena o tipo de busca escolhida pelo usuário
-  const [ wichWasLastApi, setWichWasLastApi ] = useState('') 
+  const [ whichWasLastApiResult, shetWichWasLastApiResult ] = useState('') 
 
 
   const [ userList, setUserList ] = useState<UserListProps[]>([])
@@ -64,7 +64,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
       return
     }
 
-    if(username === oldUsername && wichWasLastApi === 'repositories') {
+    if(username === oldUsername && whichWasLastApiResult === 'repositories') {
       return
     }
     
@@ -74,7 +74,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
       })
       .then(res => {
         setOldUsername(username)
-        setWichWasLastApi('repositories');
+        shetWichWasLastApiResult('repositories');
         const request = res.data;
         setRepositories(request);
         setIsRepositoriesListActive(true)
@@ -111,7 +111,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
       return
     }
 
-    if(username === oldUsername && wichWasLastApi === 'starreds') {
+    if(username === oldUsername && whichWasLastApiResult === 'starreds') {
       return
     }
     
@@ -121,7 +121,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
       })
       .then(res => {
         setOldUsername(username)
-        setWichWasLastApi('starreds');
+        shetWichWasLastApiResult('starreds');
         const request = res.data;
         setRepositories(request);
         setIsRepositoriesListActive(true)
@@ -156,7 +156,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
   const loadRepositoryList = async (repositoryType: string) => {
 
     // Travamento de busca do mesmo usuário
-    if(username === oldUsername && wichWasLastApi === repositoryType) {
+    if(username === oldUsername && whichWasLastApiResult === repositoryType) {
       return
     }
 
@@ -174,7 +174,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
         loadRepositoryList,
         isRepositoriesListActive,
         username,
-        wichWasLastApi,
+        whichWasLastApiResult,
       }}
     >  
       {children} 

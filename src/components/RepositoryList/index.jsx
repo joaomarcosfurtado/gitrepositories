@@ -10,7 +10,7 @@ export function RepositoryList () {
     userList, 
     isRepositoriesListActive, 
     username,
-    wichWasLastApi,
+    whichWasLastApiResult,
   } = useUserInfo()
     
   return (
@@ -21,7 +21,7 @@ export function RepositoryList () {
       a seção não será exibida */}
       
       {isRepositoriesListActive && (<section className="repositoryListContent">
-      <h2>Lista de {wichWasLastApi} de {userList.name} </h2> 
+      <h2>Lista de {whichWasLastApiResult} de {userList.name} </h2> 
         <div className="repositoryListUserInfo">
                     
           <div className="repositoryListUserInfoLeftSide">
