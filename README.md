@@ -13,7 +13,7 @@ agradável para quem usa:
 ferramentas utilizadas: react,
                         react-toastify,
                         react-icons,
-                        sass
+                        sass,
                         javascript
 
 # Iniciando aplicação: 
