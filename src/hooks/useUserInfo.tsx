@@ -70,8 +70,6 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
     // Consumindo API
     try {
       await api.get(`users/${username}/repos`, { 
-      // +apiParams.clientId+'&client_secret='+apiParams.clientSecret
-      // + clientId + "&" + clientSecret+"&client_secret="+clientSecret
       })
       .then(res => {
         setOldUsername(username)
