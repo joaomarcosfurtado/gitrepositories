@@ -10,13 +10,18 @@ export function RepositoryList () {
     userList, 
     isRepositoriesListActive, 
     username,
+    wichWasLastApi,
   } = useUserInfo()
     
   return (
 
    <main className="repositoryListContainer">
+      
+      {/* Testando se a API foi realizada ou não, caso não tenha sido 
+      a seção não será exibida */}
+      
       {isRepositoriesListActive && (<section className="repositoryListContent">
-      <h2>Lista de repositórios de {userList.name} </h2> 
+      <h2>Lista de {wichWasLastApi} de {userList.name} </h2> 
         <div className="repositoryListUserInfo">
                     
           <div className="repositoryListUserInfoLeftSide">

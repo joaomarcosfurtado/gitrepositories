@@ -23,6 +23,7 @@ interface UserInfoContextData {
   userList: UserListProps[];
   isRepositoriesListActive : boolean;
   username: string;
+  wichWasLastApi: string;
 }
 
 interface UserInfoProviderProps {
@@ -173,6 +174,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
         loadRepositoryList,
         isRepositoriesListActive,
         username,
+        wichWasLastApi,
       }}
     >  
       {children} 
