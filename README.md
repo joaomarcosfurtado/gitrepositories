@@ -1,4 +1,4 @@
-# gitrepositories
+# Git Repos
 Aplicação para buscar repositórios de um determinado usuário no Git
 
 Essa aplicação permite que você pesquise repositórios/favoritos 
