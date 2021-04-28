@@ -1,0 +1,158 @@
+.pageHeader {
+  
+  height: 50px; 
+  width: 100%; 
+ 
+  background-color: var(--black-750);
+}
+
+.pageHeaderContent {
+  height: 50px;
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.pageHeaderTitle {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+}
+
+.pageHeaderSearch {
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    background-color: var(--black-700);
+    color: var(--gray-200);
+    border: none;
+    border-radius: 5px;
+
+    width: 130px;
+    padding: 3px 1px;
+    
+    transition: 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: var(--black-600);
+    }
+  }
+  
+}
+
+.pageHeaderInput {
+  position: relative;
+  background-color: #393f54cc;
+  display: flex;
+  align-items: center;
+  border-radius: 3px 3px 0 0;
+  
+  
+  input {
+    width: 90%;
+    height: 60%;
+    margin-left: 15px;
+
+    background-color: transparent !important;
+    color: #BFD2FF;
+
+    border-style: none;
+    outline: none;
+    border-radius: 2px;
+
+    padding: 3px 1px;
+
+    &::-webkit-input-placeholder {
+      color: #7881A1;
+    }   
+  }
+
+  @keyframes gradient { 
+    0%{background-position:0 0}
+    100%{background-position:100% 0}
+  }
+  
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+
+}
+
+@media screen and (max-width: 830px) {
+  .pageHeader {
+    height: 260px;
+  }
+
+  .pageHeaderContent {
+    flex-direction: column;
+  }
+
+  .pageHeaderTitle {
+    margin-top: 20px;
+    margin-right: 25px;
+
+    span {
+      font-size: 2rem;
+    }
+
+    img {
+      height: 70px;
+      width: 70px;
+    }
+  }
+
+  .pageHeaderSearch {
+    flex-direction: column;
+
+    margin-top: 20px;
+    width: 300px;
+
+    input {
+      padding: 8px 0; 
+    }
+
+    button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px 0;
+    }
+  }
+}

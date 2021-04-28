@@ -1,0 +1,110 @@
+.repositoryListContainer {
+  height: calc(100vh - 50px);
+}
+
+.repositoryListContent {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    align-self: center;
+    font-size: 2rem;
+  }
+
+  animation: fadeInItens 2s;
+
+  @keyframes fadeInItens {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.repositoryListUserInfo {
+  display: flex;
+  align-items: center;
+
+  margin-top: 2rem;
+
+  justify-content: space-between;
+
+  a {
+    background: var(--green-500);
+    color: #FFF;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 5px;
+  
+    width: 150px;
+    padding: 6px;
+
+    text-decoration: none;
+    text-align: center;
+
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}
+
+.repositoryListUserInfoLeftSide {
+  display: flex;
+  align-items: center;
+
+  p {
+    line-height: 2rem;
+    font-size: 1.6rem;
+  }
+
+  p + p {
+    font-size: 1rem;
+  }
+}
+
+.repositoryListUserText {
+  margin-left: 10px;
+}
+ 
+
+img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 830px) {
+  .repositoryListContainer {
+    height: calc(100vh - 260px);
+  }
+
+  .repositoryListUserInfo {
+    flex-direction: column;
+
+    a {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+
+  .repositoryListUserInfoLeftSide {
+    width: 100%;
+  }
+}
+
+.repositoryItemContainer {
+  // background: red;
+
+  margin-top: 40px;
+  border-top: 1px solid var(--gray-200);
+}

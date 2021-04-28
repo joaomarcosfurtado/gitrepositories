@@ -1,0 +1,23 @@
+.repositoryItemContent {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 1rem 0;
+
+  p {
+    line-height: 2.5rem;
+  }
+
+  p:first-child {
+    color: var(--green-500);
+    font-weight: bold;
+  }
+
+  p:nth-child(2n) {
+    line-height: 1rem;
+  } 
+
+  strong {
+    color: var(--pink-400);
+    margin-right: 5px;
+  }
+}
+

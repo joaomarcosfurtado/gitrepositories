@@ -1,0 +1,73 @@
+.userPageHeader {
+  height: 30vh;
+  background-color: var(--black-750);
+  width: 100vw;
+  border-bottom: .5px solid var(--gray-200);
+  
+    img {
+      height: 2.2rem;
+      
+      color: var(--gray-200);
+
+      margin-left: 30px;
+      margin-top: 30px;
+      
+      
+    }
+
+    a {
+      transition: opacity .3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+    }
+  
+}
+
+.userPageContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+ 
+
+  img {
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+  }
+
+  strong {
+    margin-top: 10px;
+    font-size: 1.6rem;
+  }
+
+  p:nth-child(2n) { 
+    margin-top: 15px;
+    max-width: 300px;
+    word-break: break-word;
+    text-align: center;
+  }
+
+}
+
+.userPageFollowInfo {
+  display: flex;
+  align-items: center;
+  
+  margin-top: 10px;
+  
+  
+  span {
+    margin-left: 5px;
+    font-size: .8rem;
+  }
+
+  strong {
+    font-size: .8rem;
+    margin-right: 5px;
+  }
+}
