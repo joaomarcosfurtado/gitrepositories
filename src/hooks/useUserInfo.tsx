@@ -61,6 +61,8 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
       setRepositories([])
       setUserList([])
       setIsRepositoriesListActive(false)
+      setOldUsername('')
+
       return
     }
 
@@ -80,7 +82,8 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
         setIsRepositoriesListActive(true)
       })
       .catch(function (error: { status: any; }) {
-        toast.error('Usuário inexistente')   
+        toast.error('Usuário inexistente')
+        setOldUsername('')   
         return            
       });
 
@@ -108,6 +111,10 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
     // Validações de preenchimento para não utilizar a API sem necessidade
     if(username === '') {
       toast.error('Nenhum usuário foi selecionado.')
+      setRepositories([])
+      setUserList([])
+      setIsRepositoriesListActive(false)
+      setOldUsername('')
       return
     }
 
@@ -142,6 +149,7 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
 
     } catch {
       toast.error('Erro ao buscar repositório')
+      setOldUsername('')
     }
   }
    
@@ -156,7 +164,10 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
   const loadRepositoryList = async (repositoryType: string) => {
 
     // Travamento de busca do mesmo usuário
-    if(username === oldUsername && whichWasLastApiResult === repositoryType) {
+    if(
+      username === oldUsername && 
+      whichWasLastApiResult === repositoryType 
+    ) {
       return
     }
 
