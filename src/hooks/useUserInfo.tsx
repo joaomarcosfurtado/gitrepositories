@@ -1,7 +1,7 @@
 import { ReactNode, useContext, useState, createContext } from "react";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
-import { api, apiParams } from "../services/api";
+import { api } from "../services/api";
 
 interface RepositoryProps {
   name: string;
