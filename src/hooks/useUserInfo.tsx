@@ -134,7 +134,8 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
         setIsRepositoriesListActive(true)
       })
       .catch(function (error: { status: any; }) {
-        toast.error('Usuário inexistente')   
+        toast.error('Usuário inexistente')  
+         setOldUsername('')
         return  
       });
 
@@ -149,7 +150,6 @@ export function UserInfoProvider( {children}: UserInfoProviderProps ) {
 
     } catch {
       toast.error('Erro ao buscar repositório')
-      setOldUsername('')
     }
   }
    
